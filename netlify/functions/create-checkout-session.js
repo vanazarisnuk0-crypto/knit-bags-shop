@@ -31,6 +31,16 @@ const products = {
     description: "Handmade knitted mini bag",
     unit_amount: 5800,
   },
+  "rose-loop": {
+    name: "Rose Loop",
+    description: "Handmade knitted evening bag",
+    unit_amount: 8200,
+  },
+  "sand-tote": {
+    name: "Sand Tote",
+    description: "Handmade knitted tote bag",
+    unit_amount: 9800,
+  },
 };
 
 exports.handler = async (event) => {
@@ -104,4 +114,3 @@ exports.handler = async (event) => {
     };
   }
 };
-

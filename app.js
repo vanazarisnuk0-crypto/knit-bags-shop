@@ -65,6 +65,28 @@ const products = [
     handle: "#b59062",
     description: "\u0421\u0432\u0435\u0442\u043b\u0430\u044f \u043c\u0438\u043d\u0438-\u0441\u0443\u043c\u043e\u0447\u043a\u0430, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043b\u0435\u0433\u043a\u043e \u0441\u043e\u0447\u0435\u0442\u0430\u0435\u0442\u0441\u044f \u0441 \u043b\u0435\u0442\u043d\u0438\u043c\u0438 \u043e\u0431\u0440\u0430\u0437\u0430\u043c\u0438.",
   },
+  {
+    id: "rose-loop",
+    name: "Rose Loop",
+    category: "evening",
+    categoryLabel: "\u0412\u0435\u0447\u0435\u0440\u043d\u044f\u044f",
+    badge: "new",
+    price: 82,
+    color: "#c97b73",
+    handle: "#f4ded8",
+    description: "\u041c\u044f\u0433\u043a\u0430\u044f \u0440\u043e\u0437\u043e\u0432\u0430\u044f \u0441\u0443\u043c\u043e\u0447\u043a\u0430 \u0441 \u043a\u043e\u0440\u043e\u0442\u043a\u043e\u0439 \u0440\u0443\u0447\u043a\u043e\u0439 \u0434\u043b\u044f \u0441\u0432\u0438\u0434\u0430\u043d\u0438\u0439, \u0443\u0436\u0438\u043d\u043e\u0432 \u0438 \u043f\u043e\u0434\u0430\u0440\u043a\u043e\u0432.",
+  },
+  {
+    id: "sand-tote",
+    name: "Sand Tote",
+    category: "everyday",
+    categoryLabel: "\u041d\u0430 \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c",
+    badge: "roomy",
+    price: 98,
+    color: "#c4aa84",
+    handle: "#5d6f73",
+    description: "\u0412\u043c\u0435\u0441\u0442\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f tote-\u0441\u0443\u043c\u043a\u0430 \u0434\u043b\u044f \u0440\u0430\u0431\u043e\u0442\u044b, \u043f\u0440\u043e\u0433\u0443\u043b\u043e\u043a \u0438 \u043b\u0435\u0433\u043a\u0438\u0445 \u043f\u043e\u043a\u0443\u043f\u043e\u043a.",
+  },
 ];
 
 const state = { cart: [], category: "all", price: "all" };
@@ -138,6 +160,10 @@ function renderProducts() {
     card.querySelector(".product-category").textContent = product.categoryLabel;
     card.querySelector("h3").textContent = product.name;
     card.querySelector(".product-description").textContent = product.description;
+    card.querySelector(".product-details").innerHTML = `
+      <span>\u0420\u0443\u0447\u043d\u0430\u044f \u0432\u044f\u0437\u043a\u0430</span>
+      <span>3-5 \u0434\u043d\u0435\u0439</span>
+    `;
     card.querySelector(".price").textContent = formatPrice(product.price);
     card.querySelector("button").addEventListener("click", () => addToCart(product.id));
     productGrid.append(card);

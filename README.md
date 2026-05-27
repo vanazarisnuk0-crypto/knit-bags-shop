@@ -16,3 +16,9 @@ To accept real Apple Pay and card payments:
 4. Redeploy the site.
 5. In Stripe, enable payment methods and register your live domain for Apple Pay.
 6. Test first with Stripe test mode.
+
+Netlify build settings:
+
+- Build command: `npm install`
+- Publish directory: `.`
+- Functions directory: `netlify/functions`
