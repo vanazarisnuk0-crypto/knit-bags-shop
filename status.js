@@ -34,7 +34,7 @@ const statusTranslations = {
   },
 };
 
-const statusLanguage = localStorage.getItem("shopLanguage") || "ru";
+const statusLanguage = new URLSearchParams(window.location.search).get("lang") || localStorage.getItem("shopLanguage") || "ru";
 const statusType = document.body.dataset.status || "success";
 const copy = statusTranslations[statusLanguage] || statusTranslations.ru;
 

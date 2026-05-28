@@ -18,7 +18,7 @@
           <small data-i18n="brandTagline">люксовые сумки ручной вязки</small>
         </span>
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main navigation" data-i18n-aria="mainNavLabel">
         <a href="#catalog" data-i18n="navCatalog">Коллекция</a>
         <a href="#wish" data-i18n="navWish">Пожелания</a>
         <a href="#custom" data-i18n="navCustom">На заказ</a>
@@ -26,7 +26,7 @@
         <a href="#payment" data-i18n="navPayment">Оплата</a>
       </nav>
       <div class="top-actions">
-        <div class="language-switcher" aria-label="Language">
+        <div class="language-switcher" aria-label="Language" data-i18n-aria="languageLabel">
           <button type="button" data-lang="ru">RU</button>
           <button type="button" data-lang="da">DA</button>
           <button type="button" data-lang="en">EN</button>
@@ -47,7 +47,7 @@
         <aside class="side-script side-script-left" aria-hidden="true">
           <span>Лілия</span>
           <p data-i18n="sideVerse">Все у вас да будет с любовью.</p>
-          <small>1 Кор. 16:14</small>
+          <small data-i18n="verseRef">1 Кор. 16:14</small>
         </aside>
         <div class="hero-photo">
           <img class="hero-bag-photo" src="assets/generated/hero-knit-bag-real.webp" alt="" data-i18n-alt="heroImageAlt" />
@@ -59,7 +59,7 @@
             Небольшая студия фактурных сумок для повседневных и вечерних образов.
             Каждая модель вяжется вручную, аккуратно собирается и отправляется в подарочной упаковке.
           </p>
-          <ul class="hero-points" aria-label="Shop benefits">
+          <ul class="hero-points" aria-label="Shop benefits" data-i18n-aria="benefitsLabel">
             <li data-i18n="heroPointOne">Плотная форма, мягкая пряжа и выразительная вязка</li>
             <li data-i18n="heroPointTwo">Готовые модели или персональный оттенок под ваш гардероб</li>
             <li data-i18n="heroPointThree">Безопасная онлайн-оплата картой или Apple Pay</li>
@@ -70,7 +70,7 @@
           </div>
         </div>
         <aside class="side-script side-script-right" aria-hidden="true">
-          <span>made for soft luxury</span>
+          <span data-i18n="sideLuxury">made for soft luxury</span>
           <p data-i18n="sideNote">Индивидуальная деталь делает вещь личной.</p>
         </aside>
       </section>
@@ -83,7 +83,7 @@
         </div>
         <form class="wish-form" id="wishForm" name="wish-message" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="wish-message" />
-          <p class="hidden-field"><label>Не заполняйте <input name="bot-field" /></label></p>
+          <p class="hidden-field"><label><span data-i18n="botFieldLabel">Не заполняйте</span> <input name="bot-field" /></label></p>
           <label><span data-i18n="yourNameLabel">Ваше имя</span><input name="name" type="text" placeholder="Anna" required /></label>
           <label><span data-i18n="emailLabel">Email для ответа</span><input name="email" type="email" placeholder="name@email.com" required /></label>
           <label><span data-i18n="wishMessageLabel">Пожелание</span><textarea name="message" rows="3" placeholder="Хочу сумку в молочном цвете, с короткой ручкой..." data-i18n-placeholder="wishPlaceholder" required></textarea></label>
@@ -92,13 +92,13 @@
         </form>
       </section>
 
-      <section class="metrics" aria-label="Shop highlights">
+      <section class="metrics" aria-label="Shop highlights" data-i18n-aria="highlightsLabel">
         <div><strong>3-5</strong><span data-i18n="metricDays">дней на создание сумки</span></div>
         <div><strong>100%</strong><span data-i18n="metricHandmade">ручная работа и финальная проверка</span></div>
         <div><strong>Gift</strong><span data-i18n="metricGift">подарочная упаковка для каждого заказа</span></div>
       </section>
 
-      <section class="trust-strip" id="delivery" aria-label="Delivery and care">
+      <section class="trust-strip" id="delivery" aria-label="Delivery and care" data-i18n-aria="deliveryCareLabel">
         <div>
           <strong data-i18n="deliveryTitle">Доставка</strong>
           <span data-i18n="deliveryText">Отправка по Дании и Европе после подтверждения заказа.</span>
@@ -169,17 +169,17 @@
         </div>
         <form class="custom-form" id="customForm" name="custom-order" method="POST" data-netlify="true" netlify-honeypot="bot-field-custom">
           <input type="hidden" name="form-name" value="custom-order" />
-          <p class="hidden-field"><label>Не заполняйте <input name="bot-field-custom" /></label></p>
+          <p class="hidden-field"><label><span data-i18n="botFieldLabel">Не заполняйте</span> <input name="bot-field-custom" /></label></p>
           <label><span data-i18n="nameLabel">Имя</span><input name="name" type="text" placeholder="Anna" data-i18n-placeholder="namePlaceholder" required /></label>
           <label><span data-i18n="emailLabel">Email для ответа</span><input name="email" type="email" placeholder="name@email.com" required /></label>
           <label><span data-i18n="colorLabel">Желаемый цвет</span><input name="color" type="text" placeholder="milk, sage, black..." data-i18n-placeholder="colorPlaceholder" required /></label>
           <label>
             <span data-i18n="modelLabel">Модель</span>
             <select name="model">
-              <option>Crossbody</option>
-              <option>Mini baguette</option>
-              <option>Evening bag</option>
-              <option>Shopper</option>
+              <option data-i18n="modelCrossbody">Crossbody</option>
+              <option data-i18n="modelBaguette">Mini baguette</option>
+              <option data-i18n="modelEvening">Evening bag</option>
+              <option data-i18n="modelShopper">Shopper</option>
             </select>
           </label>
           <label><span data-i18n="notesLabel">Комментарий</span><textarea name="notes" rows="4" placeholder="Size, strap, date..." data-i18n-placeholder="notesPlaceholder"></textarea></label>
@@ -189,14 +189,19 @@
       </section>
     </main>
 
-    <aside class="menu-panel" id="menuPanel" aria-hidden="true" aria-label="Menu">
+    <aside class="menu-panel" id="menuPanel" aria-hidden="true" aria-label="Menu" data-i18n-aria="menuTitle">
       <div class="menu-scrim" data-close-menu></div>
       <div class="menu-drawer" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
         <div class="cart-header">
           <h2 id="menuTitle" data-i18n="menuTitle">Меню</h2>
           <button class="icon-button" type="button" data-close-menu aria-label="Close menu" data-i18n-aria="menuClose">x</button>
         </div>
-        <nav class="menu-links" aria-label="Mobile navigation">
+        <div class="menu-language language-switcher" aria-label="Language" data-i18n-aria="languageLabel">
+          <button type="button" data-lang="ru">RU</button>
+          <button type="button" data-lang="da">DA</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <nav class="menu-links" aria-label="Mobile navigation" data-i18n-aria="mobileNavLabel">
           <a href="#catalog" data-i18n="navCatalog">Коллекция</a>
           <a href="#wish" data-i18n="navWish">Пожелания</a>
           <a href="#custom" data-i18n="menuCustom">Индивидуальный заказ</a>
@@ -210,7 +215,7 @@
       </div>
     </aside>
 
-    <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Cart">
+    <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Cart" data-i18n-aria="cartTitle">
       <div class="cart-scrim" data-close-cart></div>
       <div class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
         <div class="cart-header">
