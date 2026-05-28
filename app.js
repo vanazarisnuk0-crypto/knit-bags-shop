@@ -43,9 +43,9 @@ const translations = {
     heroEyebrow: "handcrafted knit atelier",
     heroTitle: "Вязаные сумки с тихой роскошью",
     heroText: "Фактурные сумки ручной вязки для повседневных и вечерних образов. Каждая модель собирается аккуратно, в небольшом ателье и без лишней суеты.",
-    heroPointOne: "Плотная форма и мягкая пряжа",
-    heroPointTwo: "Готовые модели или личный оттенок",
-    heroPointThree: "Оплата картой или Apple Pay",
+    heroPointOne: "Четкая форма и мягкая пряжа",
+    heroPointTwo: "Готовые модели или ваш оттенок",
+    heroPointThree: "Спокойная оплата картой или Apple Pay",
     heroPrimary: "Смотреть коллекцию",
     heroSecondary: "Оставить пожелание",
     wishEyebrow: "client wishes",
@@ -179,9 +179,9 @@ const translations = {
     heroEyebrow: "handcrafted knit atelier",
     heroTitle: "Hæklede tasker med stille luksus",
     heroText: "Teksturrige håndlavede tasker til hverdag og aften. Hver model samles roligt og omhyggeligt i et lille atelier.",
-    heroPointOne: "Fast form og blødt garn",
-    heroPointTwo: "Færdige modeller eller personlig farve",
-    heroPointThree: "Betaling med kort eller Apple Pay",
+    heroPointOne: "Stram silhuet, blødt garn",
+    heroPointTwo: "Færdige styles eller din nuance",
+    heroPointThree: "Tryg betaling med kort eller Apple Pay",
     heroPrimary: "Se kollektionen",
     heroSecondary: "Skriv et ønske",
     wishEyebrow: "client wishes",
@@ -315,9 +315,9 @@ const translations = {
     heroEyebrow: "handcrafted knit atelier",
     heroTitle: "Crochet bags with quiet luxury",
     heroText: "Textured handmade bags for everyday and evening wear. Each piece is finished slowly and carefully in a small atelier.",
-    heroPointOne: "Structured shape and soft yarn",
-    heroPointTwo: "Ready styles or a personal shade",
-    heroPointThree: "Card or Apple Pay checkout",
+    heroPointOne: "Clean shape and soft yarn",
+    heroPointTwo: "Ready styles or your own shade",
+    heroPointThree: "Secure card or Apple Pay checkout",
     heroPrimary: "Shop collection",
     heroSecondary: "Write a wish",
     wishEyebrow: "client wishes",
@@ -422,11 +422,22 @@ const translations = {
   },
 };
 
+function getBrowserLanguage() {
+  const preferred = (navigator.language || navigator.userLanguage || "ru").slice(0, 2).toLowerCase();
+  if (preferred === "da") return "da";
+  if (preferred === "en") return "en";
+  if (preferred === "ru" || preferred === "uk") return "ru";
+  return "ru";
+}
+
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+const savedLanguage = localStorage.getItem("shopLanguage");
+
 const state = {
   cart: [],
   category: "all",
   price: "all",
-  language: new URLSearchParams(window.location.search).get("lang") || localStorage.getItem("shopLanguage") || "ru",
+  language: translations[requestedLanguage] ? requestedLanguage : translations[savedLanguage] ? savedLanguage : getBrowserLanguage(),
 };
 
 const productGrid = document.querySelector("#productGrid");
@@ -444,7 +455,7 @@ const wishForm = document.querySelector("#wishForm");
 const formResult = document.querySelector("#formResult");
 const wishResult = document.querySelector("#wishResult");
 const paymentNote = document.querySelector("#paymentNote");
-const languageButtons = document.querySelectorAll("[data-lang]");
+const languageSelects = document.querySelectorAll("[data-language-select]");
 const menuOpenButton = document.querySelector(".menu-open");
 
 function t(key) {
@@ -462,6 +473,7 @@ function formatPrice(value) {
 
 function applyStaticTranslations() {
   document.documentElement.lang = state.language;
+  document.documentElement.dataset.language = state.language;
   document.title = t("siteTitle");
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);
@@ -475,10 +487,8 @@ function applyStaticTranslations() {
   document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
     element.alt = t(element.dataset.i18nAlt);
   });
-  languageButtons.forEach((button) => {
-    const isActive = button.dataset.lang === state.language;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
+  languageSelects.forEach((select) => {
+    select.value = state.language;
   });
 }
 
@@ -664,7 +674,7 @@ priceFilter.addEventListener("change", (event) => {
   renderProducts();
 });
 
-languageButtons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+languageSelects.forEach((select) => select.addEventListener("change", () => setLanguage(select.value)));
 document.querySelector(".cart-open").addEventListener("click", openCart);
 document.querySelectorAll("[data-close-cart]").forEach((button) => button.addEventListener("click", closeCart));
 menuOpenButton.addEventListener("click", openMenu);

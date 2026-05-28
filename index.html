@@ -12,7 +12,10 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Maison Liliya">
-        <span class="brand-mark">ML</span>
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-mark-loop"></span>
+          <span class="brand-mark-initials">ML</span>
+        </span>
         <span>
           <strong>Maison Liliya</strong>
           <small data-i18n="brandTagline">люксовые сумки ручной вязки</small>
@@ -26,11 +29,14 @@
         <a href="#payment" data-i18n="navPayment">Оплата</a>
       </nav>
       <div class="top-actions">
-        <div class="language-switcher" aria-label="Language" data-i18n-aria="languageLabel">
-          <button type="button" data-lang="ru">RU</button>
-          <button type="button" data-lang="da">DA</button>
-          <button type="button" data-lang="en">EN</button>
-        </div>
+        <label class="language-select-wrap" aria-label="Language" data-i18n-aria="languageLabel">
+          <span data-i18n="languageLabel">Язык</span>
+          <select class="language-select" data-language-select>
+            <option value="ru">RU</option>
+            <option value="da">DA</option>
+            <option value="en">EN</option>
+          </select>
+        </label>
         <a class="wish-link" href="#wish" data-i18n="wishLink">Написать пожелание</a>
         <button class="icon-button menu-open" type="button" aria-label="Open menu" aria-expanded="false" data-i18n-aria="menuOpen">
           <span class="menu-icon" aria-hidden="true"></span>
@@ -60,9 +66,9 @@
             Каждая модель вяжется вручную, аккуратно собирается и отправляется в подарочной упаковке.
           </p>
           <ul class="hero-points" aria-label="Shop benefits" data-i18n-aria="benefitsLabel">
-            <li data-i18n="heroPointOne">Плотная форма, мягкая пряжа и выразительная вязка</li>
-            <li data-i18n="heroPointTwo">Готовые модели или персональный оттенок под ваш гардероб</li>
-            <li data-i18n="heroPointThree">Безопасная онлайн-оплата картой или Apple Pay</li>
+            <li data-i18n="heroPointOne">Четкая форма и мягкая пряжа</li>
+            <li data-i18n="heroPointTwo">Готовые модели или ваш оттенок</li>
+            <li data-i18n="heroPointThree">Спокойная оплата картой или Apple Pay</li>
           </ul>
           <div class="hero-actions">
             <a class="primary-button" href="#catalog" data-i18n="heroPrimary">Смотреть коллекцию</a>
@@ -232,11 +238,14 @@
           <h2 id="menuTitle" data-i18n="menuTitle">Меню</h2>
           <button class="icon-button" type="button" data-close-menu aria-label="Close menu" data-i18n-aria="menuClose">x</button>
         </div>
-        <div class="menu-language language-switcher" aria-label="Language" data-i18n-aria="languageLabel">
-          <button type="button" data-lang="ru">RU</button>
-          <button type="button" data-lang="da">DA</button>
-          <button type="button" data-lang="en">EN</button>
-        </div>
+        <label class="menu-language language-select-wrap" aria-label="Language" data-i18n-aria="languageLabel">
+          <span data-i18n="languageLabel">Язык</span>
+          <select class="language-select" data-language-select>
+            <option value="ru">RU</option>
+            <option value="da">DA</option>
+            <option value="en">EN</option>
+          </select>
+        </label>
         <nav class="menu-links" aria-label="Mobile navigation" data-i18n-aria="mobileNavLabel">
           <a href="#catalog" data-i18n="navCatalog">Коллекция</a>
           <a href="#wish" data-i18n="navWish">Пожелания</a>
