@@ -26,6 +26,7 @@ const translations = {
     benefitsLabel: "Преимущества магазина",
     highlightsLabel: "Особенности ателье",
     deliveryCareLabel: "Доставка и уход",
+    footerLabel: "Нижняя часть сайта",
     wishLink: "Написать пожелание",
     menuOpen: "Открыть меню",
     menuClose: "Закрыть меню",
@@ -103,6 +104,20 @@ const translations = {
     copyOrder: "Скопировать заказ",
     addToCart: "В корзину",
     productImageAlt: "вязаная сумка ручной работы",
+    footerHelpTitle: "Помочь с заказом?",
+    footerContact: "Связаться",
+    footerCustom: "Индивидуальный заказ",
+    footerDelivery: "Доставка и уход",
+    footerPayment: "Оплата",
+    footerAtelierTitle: "Ателье",
+    footerCollection: "Коллекция",
+    footerWish: "Пожелания",
+    footerStory: "Maison Liliya",
+    footerLocationTitle: "Студия и отправка",
+    footerLocation: "Дания / Европа",
+    footerUpdatesTitle: "Обновления Maison Liliya",
+    footerUpdatesText: "Напишите нам, если хотите первыми увидеть новые оттенки, мини-дропы и готовые модели.",
+    footerMade: "Вязаные сумки ручной работы, Дания",
     remove: "Удалить",
     emptyProducts: "Под эти фильтры пока нет моделей. Попробуйте другой стиль или цену.",
     emptyCart: "Корзина пуста. Добавьте модель из коллекции.",
@@ -147,6 +162,7 @@ const translations = {
     benefitsLabel: "Butikkens fordele",
     highlightsLabel: "Atelierets kendetegn",
     deliveryCareLabel: "Levering og pleje",
+    footerLabel: "Sidefod",
     wishLink: "Skriv et ønske",
     menuOpen: "Åbn menu",
     menuClose: "Luk menu",
@@ -224,6 +240,20 @@ const translations = {
     copyOrder: "Kopier ordre",
     addToCart: "I kurv",
     productImageAlt: "håndlavet hæklet taske",
+    footerHelpTitle: "Brug for hjælp?",
+    footerContact: "Kontakt",
+    footerCustom: "Specialbestilling",
+    footerDelivery: "Levering og pleje",
+    footerPayment: "Betaling",
+    footerAtelierTitle: "Atelier",
+    footerCollection: "Kollektion",
+    footerWish: "Ønsker",
+    footerStory: "Maison Liliya",
+    footerLocationTitle: "Studio og afsendelse",
+    footerLocation: "Danmark / Europa",
+    footerUpdatesTitle: "Maison Liliya updates",
+    footerUpdatesText: "Skriv til os, hvis du vil se nye farver, mini-drops og færdige modeller først.",
+    footerMade: "Håndlavede hæklede tasker, Danmark",
     remove: "Fjern",
     emptyProducts: "Der er ingen modeller med de filtre endnu. Prøv en anden stil eller pris.",
     emptyCart: "Kurven er tom. Tilføj en model fra kollektionen.",
@@ -268,6 +298,7 @@ const translations = {
     benefitsLabel: "Shop benefits",
     highlightsLabel: "Atelier highlights",
     deliveryCareLabel: "Delivery and care",
+    footerLabel: "Site footer",
     wishLink: "Write a wish",
     menuOpen: "Open menu",
     menuClose: "Close menu",
@@ -345,6 +376,20 @@ const translations = {
     copyOrder: "Copy order",
     addToCart: "Add to cart",
     productImageAlt: "handmade crochet bag",
+    footerHelpTitle: "May we help?",
+    footerContact: "Contact",
+    footerCustom: "Custom order",
+    footerDelivery: "Delivery and care",
+    footerPayment: "Payment",
+    footerAtelierTitle: "The atelier",
+    footerCollection: "Collection",
+    footerWish: "Wishes",
+    footerStory: "Maison Liliya",
+    footerLocationTitle: "Studio and shipping",
+    footerLocation: "Denmark / Europe",
+    footerUpdatesTitle: "Maison Liliya updates",
+    footerUpdatesText: "Write to us if you want first access to new shades, mini drops and ready styles.",
+    footerMade: "Handmade crochet bags, Denmark",
     remove: "Remove",
     emptyProducts: "No models match these filters yet. Try another style or price.",
     emptyCart: "Your cart is empty. Add a model from the collection.",
@@ -588,6 +633,27 @@ function submitAsEmail(subject, text) {
   window.location.href = `mailto:${SHOP_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
 }
 
+function setupRevealMotion() {
+  const elements = document.querySelectorAll(".hero-copy, .wish-panel, .metrics, .trust-strip, .catalog-section, .payment-band, .custom-section, .product-card");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  elements.forEach((element) => element.classList.add("reveal-on-scroll"));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+  );
+  elements.forEach((element) => observer.observe(element));
+}
+
 categoryFilter.addEventListener("change", (event) => {
   state.category = event.target.value;
   renderProducts();
@@ -603,6 +669,10 @@ document.querySelector(".cart-open").addEventListener("click", openCart);
 document.querySelectorAll("[data-close-cart]").forEach((button) => button.addEventListener("click", closeCart));
 menuOpenButton.addEventListener("click", openMenu);
 document.querySelectorAll("[data-close-menu], .menu-links a").forEach((element) => element.addEventListener("click", closeMenu));
+document.querySelector("[data-menu-cart]").addEventListener("click", () => {
+  closeMenu();
+  openCart();
+});
 document.querySelectorAll("[data-payment]").forEach((button) => button.addEventListener("click", () => showPaymentPlaceholder(button.dataset.payment)));
 
 checkoutButton.addEventListener("click", async () => {
@@ -642,4 +712,5 @@ customForm.addEventListener("submit", async (event) => {
 applyStaticTranslations();
 renderProducts();
 renderCart();
+setupRevealMotion();
 

@@ -50,7 +50,7 @@
           <small data-i18n="verseRef">1 Кор. 16:14</small>
         </aside>
         <div class="hero-photo">
-          <img class="hero-bag-photo" src="assets/generated/hero-knit-bag-real.webp" alt="" data-i18n-alt="heroImageAlt" />
+          <img class="hero-bag-photo" src="assets/generated/hero-knit-bag-real.webp" alt="" decoding="async" fetchpriority="high" data-i18n-alt="heroImageAlt" />
         </div>
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="heroEyebrow">handcrafted knit atelier</p>
@@ -189,6 +189,42 @@
       </section>
     </main>
 
+    <footer class="site-footer" id="footer" aria-label="Footer" data-i18n-aria="footerLabel">
+      <div class="footer-grid">
+        <section class="footer-column">
+          <h2 data-i18n="footerHelpTitle">Помочь с заказом?</h2>
+          <a href="#wish" data-i18n="footerContact">Связаться</a>
+          <a href="#custom" data-i18n="footerCustom">Индивидуальный заказ</a>
+          <a href="#delivery" data-i18n="footerDelivery">Доставка и уход</a>
+          <a href="#payment" data-i18n="footerPayment">Оплата</a>
+        </section>
+
+        <section class="footer-column">
+          <h2 data-i18n="footerAtelierTitle">Ателье</h2>
+          <a href="#catalog" data-i18n="footerCollection">Коллекция</a>
+          <a href="#wish" data-i18n="footerWish">Пожелания</a>
+          <a href="#top" data-i18n="footerStory">Maison Liliya</a>
+          <a href="mailto:liliiashulga32@gmail.com">liliiashulga32@gmail.com</a>
+        </section>
+
+        <section class="footer-column footer-wide">
+          <h2 data-i18n="footerLocationTitle">Студия и отправка</h2>
+          <a class="footer-locator" href="mailto:liliiashulga32@gmail.com">
+            <span data-i18n="footerLocation">Denmark / Europe</span>
+            <span aria-hidden="true">›</span>
+          </a>
+          <div class="footer-news">
+            <h3 data-i18n="footerUpdatesTitle">Обновления Maison Liliya</h3>
+            <p data-i18n="footerUpdatesText">Напишите нам, если хотите первыми увидеть новые оттенки, мини-дропы и готовые модели.</p>
+          </div>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <span>Maison Liliya</span>
+        <span data-i18n="footerMade">Handmade crochet bags, Denmark</span>
+      </div>
+    </footer>
+
     <aside class="menu-panel" id="menuPanel" aria-hidden="true" aria-label="Menu" data-i18n-aria="menuTitle">
       <div class="menu-scrim" data-close-menu></div>
       <div class="menu-drawer" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
@@ -207,6 +243,7 @@
           <a href="#custom" data-i18n="menuCustom">Индивидуальный заказ</a>
           <a href="#delivery" data-i18n="menuDelivery">Доставка и уход</a>
           <a href="#payment" data-i18n="navPayment">Оплата</a>
+          <button class="menu-cart-button" type="button" data-menu-cart data-i18n="cartTitle">Корзина</button>
         </nav>
         <div class="menu-signature">
           <strong>Maison Liliya</strong>
@@ -238,7 +275,7 @@
     <template id="productTemplate">
       <article class="product-card">
         <div class="product-image">
-          <img alt="" loading="lazy" />
+          <img alt="" loading="lazy" decoding="async" />
           <span class="badge"></span>
         </div>
         <div class="product-info">
