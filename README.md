@@ -22,3 +22,14 @@ Netlify build settings:
 - Build command: `npm install`
 - Publish directory: `.`
 - Functions directory: `netlify/functions`
+
+## Client wishes and custom orders
+
+The homepage includes two Netlify Forms:
+
+- `wish-message` for quick customer wishes from the top section
+- `custom-order` for custom bag requests
+
+After deploying to Netlify, open **Forms** in the Netlify project and enable email notifications for these forms so messages arrive to your email.
+
+For local preview fallback, `SHOP_EMAIL` in `app.js` is set to `liliiashulga32@gmail.com`.

@@ -3,118 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maison Knit Bags | Авторские вязаные сумки</title>
+    <title>Maison Liliya | Авторские вязаные сумки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Maison Knit Bags">
-        <span class="brand-mark">MK</span>
+      <a class="brand" href="#top" aria-label="Maison Liliya">
+        <span class="brand-mark">ML</span>
         <span>
-          <strong>Maison Knit Bags</strong>
-          <small>авторские сумки ручной вязки</small>
+          <strong>Maison Liliya</strong>
+          <small data-i18n="brandTagline">люксовые сумки ручной вязки</small>
         </span>
       </a>
       <nav class="nav" aria-label="Main navigation">
-        <a href="#catalog">Коллекция</a>
-        <a href="#custom">На заказ</a>
-        <a href="#delivery">Сервис</a>
-        <a href="#payment">Оплата</a>
+        <a href="#catalog" data-i18n="navCatalog">Коллекция</a>
+        <a href="#wish" data-i18n="navWish">Пожелания</a>
+        <a href="#custom" data-i18n="navCustom">На заказ</a>
+        <a href="#delivery" data-i18n="navService">Сервис</a>
+        <a href="#payment" data-i18n="navPayment">Оплата</a>
       </nav>
-      <button class="icon-button cart-open" type="button" aria-label="Open cart">
-        <span class="cart-icon" aria-hidden="true"></span>
-        <span class="cart-count" data-cart-count>0</span>
-      </button>
+      <div class="top-actions">
+        <div class="language-switcher" aria-label="Language">
+          <button type="button" data-lang="ru">RU</button>
+          <button type="button" data-lang="da">DA</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="wish-link" href="#wish" data-i18n="wishLink">Написать пожелание</a>
+        <button class="icon-button menu-open" type="button" aria-label="Open menu" aria-expanded="false" data-i18n-aria="menuOpen">
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <button class="icon-button cart-open" type="button" aria-label="Open cart" data-i18n-aria="cartOpen">
+          <span class="cart-icon" aria-hidden="true"></span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
+        <aside class="side-script side-script-left" aria-hidden="true">
+          <span>Лілия</span>
+          <p data-i18n="sideVerse">Все у вас да будет с любовью.</p>
+          <small>1 Кор. 16:14</small>
+        </aside>
         <div class="hero-photo">
-          <svg class="hero-bag-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" role="img" aria-label="&#1042;&#1103;&#1079;&#1072;&#1085;&#1072;&#1103; &#1089;&#1091;&#1084;&#1086;&#1095;&#1082;&#1072; &#1088;&#1091;&#1095;&#1085;&#1086;&#1081; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099;">
-            <defs>
-              <linearGradient id="heroGradient" x1="0" y1="0" x2="1" y2="1">
-                <stop stop-color="#f5d1c4" />
-                <stop offset="1" stop-color="#8f4c3f" />
-              </linearGradient>
-              <pattern id="heroKnit" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-                <path d="M0 17h34" stroke="#fff" stroke-opacity=".25" stroke-width="8" />
-                <path d="M0 28h34" stroke="#5f2d28" stroke-opacity=".18" stroke-width="4" />
-              </pattern>
-            </defs>
-            <ellipse cx="450" cy="658" rx="290" ry="50" fill="#2b1e18" opacity=".18" />
-            <path d="M318 248c10-128 246-128 264 0" fill="none" stroke="#f7eadf" stroke-width="34" stroke-linecap="round" />
-            <path d="M220 228h460l-52 394c-7 50-50 88-101 88H373c-51 0-94-38-101-88z" fill="url(#heroGradient)" />
-            <path d="M220 228h460l-52 394c-7 50-50 88-101 88H373c-51 0-94-38-101-88z" fill="url(#heroKnit)" />
-            <path d="M220 228h460l-52 394c-7 50-50 88-101 88H373c-51 0-94-38-101-88z" fill="none" stroke="#fff" stroke-opacity=".52" stroke-width="16" />
-            <circle cx="206" cy="590" r="74" fill="#d7c6aa" />
-            <path d="M160 590c35-32 70-32 102 0M158 558c38 36 76 36 114 0M162 624c36-32 72-32 108 0" stroke="#fff" stroke-opacity=".45" stroke-width="9" fill="none" />
-            <circle cx="708" cy="224" r="48" fill="#71836d" />
-            <path d="M678 224c22-20 44-20 66 0M678 204c24 20 48 20 70 0M678 246c24-20 48-20 70 0" stroke="#fff" stroke-opacity=".35" stroke-width="6" fill="none" />
-          </svg>
+          <img class="hero-bag-photo" src="assets/generated/hero-knit-bag-real.png" alt="" data-i18n-alt="heroImageAlt" />
         </div>
         <div class="hero-copy">
-          <p class="eyebrow">handcrafted knit atelier</p>
-          <h1 id="hero-title">Вязаные сумки с бутиковым характером</h1>
-          <p>
+          <p class="eyebrow" data-i18n="heroEyebrow">handcrafted knit atelier</p>
+          <h1 id="hero-title" data-i18n="heroTitle">Вязаные сумки с бутиковым характером</h1>
+          <p data-i18n="heroText">
             Небольшая студия фактурных сумок для повседневных и вечерних образов.
             Каждая модель вяжется вручную, аккуратно собирается и отправляется в подарочной упаковке.
           </p>
           <ul class="hero-points" aria-label="Shop benefits">
-            <li>Плотная форма, мягкая пряжа и выразительная вязка</li>
-            <li>Готовые модели или персональный оттенок под ваш гардероб</li>
-            <li>Безопасная онлайн-оплата картой или Apple Pay</li>
+            <li data-i18n="heroPointOne">Плотная форма, мягкая пряжа и выразительная вязка</li>
+            <li data-i18n="heroPointTwo">Готовые модели или персональный оттенок под ваш гардероб</li>
+            <li data-i18n="heroPointThree">Безопасная онлайн-оплата картой или Apple Pay</li>
           </ul>
           <div class="hero-actions">
-            <a class="primary-button" href="#catalog">Смотреть коллекцию</a>
-            <a class="secondary-button" href="#custom">Собрать свой цвет</a>
+            <a class="primary-button" href="#catalog" data-i18n="heroPrimary">Смотреть коллекцию</a>
+            <a class="secondary-button" href="#wish" data-i18n="heroSecondary">Оставить пожелание</a>
           </div>
         </div>
+        <aside class="side-script side-script-right" aria-hidden="true">
+          <span>made for soft luxury</span>
+          <p data-i18n="sideNote">Индивидуальная деталь делает вещь личной.</p>
+        </aside>
+      </section>
+
+      <section class="wish-panel" id="wish" aria-labelledby="wish-title">
+        <div>
+          <p class="eyebrow" data-i18n="wishEyebrow">client wishes</p>
+          <h2 id="wish-title" data-i18n="wishTitle">Напишите пожелание к сумке</h2>
+          <p data-i18n="wishText">Цвет, размер, подарок, дата или короткая записка для Лілии — заявка сохранится в Netlify Forms, а при локальном просмотре откроется email.</p>
+        </div>
+        <form class="wish-form" id="wishForm" name="wish-message" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="wish-message" />
+          <p class="hidden-field"><label>Не заполняйте <input name="bot-field" /></label></p>
+          <label><span data-i18n="yourNameLabel">Ваше имя</span><input name="name" type="text" placeholder="Anna" required /></label>
+          <label><span data-i18n="emailLabel">Email для ответа</span><input name="email" type="email" placeholder="name@email.com" required /></label>
+          <label><span data-i18n="wishMessageLabel">Пожелание</span><textarea name="message" rows="3" placeholder="Хочу сумку в молочном цвете, с короткой ручкой..." data-i18n-placeholder="wishPlaceholder" required></textarea></label>
+          <button class="primary-button" type="submit" data-i18n="wishSubmit">Отправить пожелание</button>
+          <p class="form-result" id="wishResult" role="status"></p>
+        </form>
       </section>
 
       <section class="metrics" aria-label="Shop highlights">
-        <div><strong>3-5</strong><span>дней на создание сумки</span></div>
-        <div><strong>100%</strong><span>ручная работа и финальная проверка</span></div>
-        <div><strong>Gift</strong><span>подарочная упаковка для каждого заказа</span></div>
+        <div><strong>3-5</strong><span data-i18n="metricDays">дней на создание сумки</span></div>
+        <div><strong>100%</strong><span data-i18n="metricHandmade">ручная работа и финальная проверка</span></div>
+        <div><strong>Gift</strong><span data-i18n="metricGift">подарочная упаковка для каждого заказа</span></div>
       </section>
 
       <section class="trust-strip" id="delivery" aria-label="Delivery and care">
         <div>
-          <strong>Доставка</strong>
-          <span>Отправка по Дании и Европе после подтверждения заказа.</span>
+          <strong data-i18n="deliveryTitle">Доставка</strong>
+          <span data-i18n="deliveryText">Отправка по Дании и Европе после подтверждения заказа.</span>
         </div>
         <div>
-          <strong>Уход</strong>
-          <span>Рекомендации по хранению и бережной чистке идут вместе с сумкой.</span>
+          <strong data-i18n="careTitle">Уход</strong>
+          <span data-i18n="careText">Рекомендации по хранению и бережной чистке идут вместе с сумкой.</span>
         </div>
         <div>
-          <strong>Подарок</strong>
-          <span>Можно добавить открытку с коротким персональным текстом.</span>
+          <strong data-i18n="giftTitle">Подарок</strong>
+          <span data-i18n="giftText">Можно добавить открытку с коротким персональным текстом.</span>
         </div>
       </section>
 
       <section class="section catalog-section" id="catalog" aria-labelledby="catalog-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">collection</p>
-            <h2 id="catalog-title">Готовые модели</h2>
+            <p class="eyebrow" data-i18n="catalogEyebrow">collection</p>
+            <h2 id="catalog-title" data-i18n="catalogTitle">Готовые модели</h2>
           </div>
           <div class="toolbar">
             <label>
-              <span>Стиль</span>
+              <span data-i18n="styleLabel">Стиль</span>
               <select id="categoryFilter">
-                <option value="all">Все</option>
-                <option value="everyday">На каждый день</option>
-                <option value="evening">Вечерние</option>
-                <option value="mini">Мини</option>
+                <option value="all" data-i18n="filterAll">Все</option>
+                <option value="everyday" data-i18n="filterEveryday">На каждый день</option>
+                <option value="evening" data-i18n="filterEvening">Вечерние</option>
+                <option value="mini" data-i18n="filterMini">Мини</option>
               </select>
             </label>
             <label>
-              <span>Цена</span>
+              <span data-i18n="priceLabel">Цена</span>
               <select id="priceFilter">
-                <option value="all">Любая</option>
-                <option value="under60">до 60 EUR</option>
-                <option value="60to80">60-80 EUR</option>
-                <option value="over80">от 80 EUR</option>
+                <option value="all" data-i18n="priceAll">Любая</option>
+                <option value="under60" data-i18n="priceUnder60">до 60 EUR</option>
+                <option value="60to80" data-i18n="price60to80">60-80 EUR</option>
+                <option value="over80" data-i18n="priceOver80">от 80 EUR</option>
               </select>
             </label>
           </div>
@@ -124,33 +145,36 @@
 
       <section class="payment-band" id="payment" aria-labelledby="payment-title">
         <div>
-          <p class="eyebrow">secure checkout</p>
-          <h2 id="payment-title">Оплата картой или Apple Pay</h2>
-          <p>
+          <p class="eyebrow" data-i18n="paymentEyebrow">secure checkout</p>
+          <h2 id="payment-title" data-i18n="paymentTitle">Оплата картой или Apple Pay</h2>
+          <p data-i18n="paymentText">
             Заказ оформляется через защищенную платежную страницу. После оплаты вы получите подтверждение,
             а мы уточним детали отправки и бережно подготовим сумку к доставке.
           </p>
         </div>
         <div class="pay-preview">
           <button class="apple-pay-button" type="button">Pay</button>
-          <button class="card-pay-button" type="button">Оплатить картой</button>
+          <button class="card-pay-button" type="button" data-i18n="payCard">Оплатить картой</button>
         </div>
       </section>
 
       <section class="section custom-section" id="custom" aria-labelledby="custom-title">
         <div class="custom-copy">
-          <p class="eyebrow">bespoke order</p>
-          <h2 id="custom-title">Сумка в вашем оттенке</h2>
-          <p>
+          <p class="eyebrow" data-i18n="customEyebrow">bespoke order</p>
+          <h2 id="custom-title" data-i18n="customTitle">Сумка в вашем оттенке</h2>
+          <p data-i18n="customText">
             Выберите форму, оттенок пряжи, длину ручки и фурнитуру. Мы соберем заявку,
             согласуем детали и подскажем сроки перед началом работы.
           </p>
         </div>
-        <form class="custom-form" id="customForm">
-          <label><span>Имя</span><input name="name" type="text" placeholder="Anna" required /></label>
-          <label><span>Желаемый цвет</span><input name="color" type="text" placeholder="milk, sage, black..." required /></label>
+        <form class="custom-form" id="customForm" name="custom-order" method="POST" data-netlify="true" netlify-honeypot="bot-field-custom">
+          <input type="hidden" name="form-name" value="custom-order" />
+          <p class="hidden-field"><label>Не заполняйте <input name="bot-field-custom" /></label></p>
+          <label><span data-i18n="nameLabel">Имя</span><input name="name" type="text" placeholder="Anna" data-i18n-placeholder="namePlaceholder" required /></label>
+          <label><span data-i18n="emailLabel">Email для ответа</span><input name="email" type="email" placeholder="name@email.com" required /></label>
+          <label><span data-i18n="colorLabel">Желаемый цвет</span><input name="color" type="text" placeholder="milk, sage, black..." data-i18n-placeholder="colorPlaceholder" required /></label>
           <label>
-            <span>Модель</span>
+            <span data-i18n="modelLabel">Модель</span>
             <select name="model">
               <option>Crossbody</option>
               <option>Mini baguette</option>
@@ -158,28 +182,49 @@
               <option>Shopper</option>
             </select>
           </label>
-          <label><span>Комментарий</span><textarea name="notes" rows="4" placeholder="Size, strap, date..."></textarea></label>
-          <button class="primary-button" type="submit">Сформировать заявку</button>
+          <label><span data-i18n="notesLabel">Комментарий</span><textarea name="notes" rows="4" placeholder="Size, strap, date..." data-i18n-placeholder="notesPlaceholder"></textarea></label>
+          <button class="primary-button" type="submit" data-i18n="customSubmit">Сформировать заявку</button>
           <p class="form-result" id="formResult" role="status"></p>
         </form>
       </section>
     </main>
 
+    <aside class="menu-panel" id="menuPanel" aria-hidden="true" aria-label="Menu">
+      <div class="menu-scrim" data-close-menu></div>
+      <div class="menu-drawer" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+        <div class="cart-header">
+          <h2 id="menuTitle" data-i18n="menuTitle">Меню</h2>
+          <button class="icon-button" type="button" data-close-menu aria-label="Close menu" data-i18n-aria="menuClose">x</button>
+        </div>
+        <nav class="menu-links" aria-label="Mobile navigation">
+          <a href="#catalog" data-i18n="navCatalog">Коллекция</a>
+          <a href="#wish" data-i18n="navWish">Пожелания</a>
+          <a href="#custom" data-i18n="menuCustom">Индивидуальный заказ</a>
+          <a href="#delivery" data-i18n="menuDelivery">Доставка и уход</a>
+          <a href="#payment" data-i18n="navPayment">Оплата</a>
+        </nav>
+        <div class="menu-signature">
+          <strong>Maison Liliya</strong>
+          <span data-i18n="sideVerse">Все у вас да будет с любовью.</span>
+        </div>
+      </div>
+    </aside>
+
     <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Cart">
       <div class="cart-scrim" data-close-cart></div>
       <div class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
         <div class="cart-header">
-          <h2 id="cartTitle">Корзина</h2>
-          <button class="icon-button" type="button" data-close-cart aria-label="Close cart">x</button>
+          <h2 id="cartTitle" data-i18n="cartTitle">Корзина</h2>
+          <button class="icon-button" type="button" data-close-cart aria-label="Close cart" data-i18n-aria="cartClose">x</button>
         </div>
         <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
-          <div class="cart-total"><span>Итого</span><strong data-cart-total>0 EUR</strong></div>
+          <div class="cart-total"><span data-i18n="totalLabel">Итого</span><strong data-cart-total>0 EUR</strong></div>
           <div class="checkout-options">
             <button class="apple-pay-button checkout-button" type="button" data-payment="apple">Apple Pay</button>
-            <button class="card-pay-button checkout-button" type="button" data-payment="card">Карта</button>
+            <button class="card-pay-button checkout-button" type="button" data-payment="card" data-i18n="cardShort">Карта</button>
           </div>
-          <button class="secondary-button checkout-button" type="button" id="checkoutButton">Скопировать заказ</button>
+          <button class="secondary-button checkout-button" type="button" id="checkoutButton" data-i18n="copyOrder">Скопировать заказ</button>
           <p class="payment-note" id="paymentNote"></p>
         </div>
       </div>
@@ -188,7 +233,7 @@
     <template id="productTemplate">
       <article class="product-card">
         <div class="product-image">
-          <img alt="" />
+          <img alt="" loading="lazy" />
           <span class="badge"></span>
         </div>
         <div class="product-info">

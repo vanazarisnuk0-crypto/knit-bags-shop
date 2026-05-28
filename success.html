@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment success | Maison Knit Bags</title>
+    <title>Payment success | Maison Liliya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-status="success">
     <main class="status-page">
       <section>
-        <p class="eyebrow">payment success</p>
-        <h1>Оплата прошла</h1>
-        <p>Спасибо за заказ. Мы подготовим сумку к отправке и свяжемся с вами, чтобы подтвердить детали доставки.</p>
-        <a class="primary-button" href="index.html">Вернуться в магазин</a>
+        <p class="eyebrow" data-status-i18n="eyebrow">payment success</p>
+        <h1 data-status-i18n="heading">Оплата прошла</h1>
+        <p data-status-i18n="text">Спасибо за заказ. Мы подготовим сумку к отправке и свяжемся с вами, чтобы подтвердить детали доставки.</p>
+        <a class="primary-button" href="index.html" data-status-i18n="back">Вернуться в магазин</a>
       </section>
     </main>
+    <script src="status.js"></script>
   </body>
 </html>
