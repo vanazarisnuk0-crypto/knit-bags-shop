@@ -1085,10 +1085,10 @@ html[data-language="da"] {
 }
 
 html[data-language="en"] {
-  --accent: #263f66;
-  --accent-dark: #182a46;
-  --olive: #56645a;
-  --gold: #b89155;
+  --accent: #b86f78;
+  --accent-dark: #874550;
+  --olive: #6d625c;
+  --gold: #bf9162;
 }
 
 body {
