@@ -1,14 +1,14 @@
-const SHOP_EMAIL = "liliiashulga32@gmail.com";
+﻿const SHOP_EMAIL = "liliiashulga32@gmail.com";
 
 const products = [
-  { id: "sage-crossbody", name: "Sage Crossbody", category: "everyday", price: 72, image: "assets/generated/sage-crossbody-real.png" },
-  { id: "cream-baguette", name: "Cream Baguette", category: "evening", price: 86, image: "assets/generated/cream-baguette-real.png" },
-  { id: "berry-mini", name: "Berry Mini", category: "mini", price: 54, image: "assets/generated/berry-mini-real.png" },
-  { id: "cocoa-shopper", name: "Cocoa Shopper", category: "everyday", price: 94, image: "assets/generated/cocoa-shopper-real.png" },
-  { id: "black-pearl", name: "Black Pearl", category: "evening", price: 79, image: "assets/generated/black-pearl-real.png" },
-  { id: "milk-cloud", name: "Milk Cloud", category: "mini", price: 58, image: "assets/generated/milk-cloud-real.png" },
-  { id: "rose-loop", name: "Rose Loop", category: "evening", price: 82, image: "assets/generated/rose-loop-real.png" },
-  { id: "sand-tote", name: "Sand Tote", category: "everyday", price: 98, image: "assets/generated/sand-tote-real.png" },
+  { id: "sage-crossbody", name: "Sage Crossbody", category: "everyday", price: 72, image: "assets/generated/sage-crossbody-real.webp" },
+  { id: "cream-baguette", name: "Cream Baguette", category: "evening", price: 86, image: "assets/generated/cream-baguette-real.webp" },
+  { id: "berry-mini", name: "Berry Mini", category: "mini", price: 54, image: "assets/generated/berry-mini-real.webp" },
+  { id: "cocoa-shopper", name: "Cocoa Shopper", category: "everyday", price: 94, image: "assets/generated/cocoa-shopper-real.webp" },
+  { id: "black-pearl", name: "Black Pearl", category: "evening", price: 79, image: "assets/generated/black-pearl-real.webp" },
+  { id: "milk-cloud", name: "Milk Cloud", category: "mini", price: 58, image: "assets/generated/milk-cloud-real.webp" },
+  { id: "rose-loop", name: "Rose Loop", category: "evening", price: 82, image: "assets/generated/rose-loop-real.webp" },
+  { id: "sand-tote", name: "Sand Tote", category: "everyday", price: 98, image: "assets/generated/sand-tote-real.webp" },
 ];
 
 const translations = {
@@ -600,3 +600,4 @@ customForm.addEventListener("submit", async (event) => {
 applyStaticTranslations();
 renderProducts();
 renderCart();
+
