@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maison Liliya | Авторские вязаные сумки</title>
+    <title>Made by Lorea | Авторские вязаные сумки</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -11,13 +11,13 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Maison Liliya">
+      <a class="brand" href="#top" aria-label="Made by Lorea">
         <span class="brand-mark" aria-hidden="true">
           <span class="brand-mark-loop"></span>
-          <span class="brand-mark-initials">ML</span>
+          <span class="brand-mark-initials">L</span>
         </span>
         <span>
-          <strong>Maison Liliya</strong>
+          <strong>Made by Lorea</strong>
           <small data-i18n="brandTagline">люксовые сумки ручной вязки</small>
         </span>
       </a>
@@ -29,7 +29,7 @@
         <a href="#payment" data-i18n="navPayment">Оплата</a>
       </nav>
       <div class="top-actions">
-        <label class="language-select-wrap" aria-label="Выбор">
+        <label class="language-select-wrap" aria-label="Language" data-i18n-aria="languageLabel">
           <select class="language-select" data-language-select>
             <option value="ru">RU</option>
             <option value="da">DA</option>
@@ -50,7 +50,7 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <aside class="side-script side-script-left" aria-hidden="true">
-          <span>Лілия</span>
+          <span>Lorea</span>
           <p data-i18n="sideVerse">Все у вас да будет с любовью.</p>
           <small data-i18n="verseRef">1 Кор. 16:14</small>
         </aside>
@@ -157,9 +157,21 @@
             а мы уточним детали отправки и бережно подготовим сумку к доставке.
           </p>
         </div>
-        <div class="pay-preview">
-          <button class="apple-pay-button" type="button">Pay</button>
-          <button class="card-pay-button" type="button" data-i18n="payCard">Оплатить картой</button>
+        <div class="pay-preview" aria-label="Checkout preview">
+          <div class="pay-card-visual" aria-hidden="true">
+            <div>
+              <span>Made by Lorea</span>
+              <strong>72 EUR</strong>
+            </div>
+            <i></i>
+          </div>
+          <div class="pay-chip-row" aria-hidden="true">
+            <span>Visa</span>
+            <span>Mastercard</span>
+            <span>Apple Pay</span>
+          </div>
+          <button class="apple-pay-button" type="button" data-payment-preview="apple">Apple Pay</button>
+          <button class="card-pay-button" type="button" data-payment-preview="card" data-i18n="payCard">Оплатить картой</button>
         </div>
       </section>
 
@@ -208,7 +220,7 @@
           <h2 data-i18n="footerAtelierTitle">Ателье</h2>
           <a href="#catalog" data-i18n="footerCollection">Коллекция</a>
           <a href="#wish" data-i18n="footerWish">Пожелания</a>
-          <a href="#top" data-i18n="footerStory">Maison Liliya</a>
+          <a href="#top" data-i18n="footerStory">Made by Lorea</a>
           <a href="mailto:liliiashulga32@gmail.com">liliiashulga32@gmail.com</a>
         </section>
 
@@ -219,13 +231,13 @@
             <span aria-hidden="true">›</span>
           </a>
           <div class="footer-news">
-            <h3 data-i18n="footerUpdatesTitle">Обновления Maison Liliya</h3>
+            <h3 data-i18n="footerUpdatesTitle">Обновления Made by Lorea</h3>
             <p data-i18n="footerUpdatesText">Напишите нам, если хотите первыми увидеть новые оттенки, мини-дропы и готовые модели.</p>
           </div>
         </section>
       </div>
       <div class="footer-bottom">
-        <span>Maison Liliya</span>
+        <span>Made by Lorea</span>
         <span data-i18n="footerMade">Handmade crochet bags, Denmark</span>
       </div>
     </footer>
@@ -237,7 +249,7 @@
           <h2 id="menuTitle" data-i18n="menuTitle">Меню</h2>
           <button class="icon-button" type="button" data-close-menu aria-label="Close menu" data-i18n-aria="menuClose">x</button>
         </div>
-        <label class="menu-language language-select-wrap" aria-label="Выбор">
+        <label class="menu-language language-select-wrap" aria-label="Language" data-i18n-aria="languageLabel">
           <select class="language-select" data-language-select>
             <option value="ru">RU</option>
             <option value="da">DA</option>
@@ -253,7 +265,7 @@
           <button class="menu-cart-button" type="button" data-menu-cart data-i18n="cartTitle">Корзина</button>
         </nav>
         <div class="menu-signature">
-          <strong>Maison Liliya</strong>
+          <strong>Made by Lorea</strong>
           <span data-i18n="sideVerse">Все у вас да будет с любовью.</span>
         </div>
       </div>

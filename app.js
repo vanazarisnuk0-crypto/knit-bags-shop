@@ -13,7 +13,7 @@ const products = [
 
 const translations = {
   ru: {
-    siteTitle: "Maison Liliya | Авторские вязаные сумки",
+    siteTitle: "Made by Lorea | Авторские вязаные сумки",
     brandTagline: "люксовые сумки ручной вязки",
     navCatalog: "Коллекция",
     navWish: "Пожелания",
@@ -112,10 +112,10 @@ const translations = {
     footerAtelierTitle: "Ателье",
     footerCollection: "Коллекция",
     footerWish: "Пожелания",
-    footerStory: "Maison Liliya",
+    footerStory: "Made by Lorea",
     footerLocationTitle: "Студия и отправка",
     footerLocation: "Дания / Европа",
-    footerUpdatesTitle: "Обновления Maison Liliya",
+    footerUpdatesTitle: "Обновления Made by Lorea",
     footerUpdatesText: "Напишите нам, если хотите первыми увидеть новые оттенки, мини-дропы и готовые модели.",
     footerMade: "Вязаные сумки ручной работы, Дания",
     remove: "Удалить",
@@ -149,7 +149,7 @@ const translations = {
     },
   },
   da: {
-    siteTitle: "Maison Liliya | Håndlavede hæklede tasker",
+    siteTitle: "Made by Lorea | Håndlavede hæklede tasker",
     brandTagline: "håndlavede hæklede tasker",
     navCatalog: "Kollektion",
     navWish: "Ønsker",
@@ -248,10 +248,10 @@ const translations = {
     footerAtelierTitle: "Atelier",
     footerCollection: "Kollektion",
     footerWish: "Ønsker",
-    footerStory: "Maison Liliya",
+    footerStory: "Made by Lorea",
     footerLocationTitle: "Studio og afsendelse",
     footerLocation: "Danmark / Europa",
-    footerUpdatesTitle: "Maison Liliya updates",
+    footerUpdatesTitle: "Made by Lorea updates",
     footerUpdatesText: "Skriv til os, hvis du vil se nye farver, mini-drops og færdige modeller først.",
     footerMade: "Håndlavede hæklede tasker, Danmark",
     remove: "Fjern",
@@ -285,7 +285,7 @@ const translations = {
     },
   },
   en: {
-    siteTitle: "Maison Liliya | Handmade Crochet Bags",
+    siteTitle: "Made by Lorea | Handmade Crochet Bags",
     brandTagline: "handmade crochet bags",
     navCatalog: "Collection",
     navWish: "Wishes",
@@ -384,10 +384,10 @@ const translations = {
     footerAtelierTitle: "The atelier",
     footerCollection: "Collection",
     footerWish: "Wishes",
-    footerStory: "Maison Liliya",
+    footerStory: "Made by Lorea",
     footerLocationTitle: "Studio and shipping",
     footerLocation: "Denmark / Europe",
-    footerUpdatesTitle: "Maison Liliya updates",
+    footerUpdatesTitle: "Made by Lorea updates",
     footerUpdatesText: "Write to us if you want first access to new shades, mini drops and ready styles.",
     footerMade: "Handmade crochet bags, Denmark",
     remove: "Remove",
@@ -623,6 +623,15 @@ function showPaymentPlaceholder(type) {
   startStripeCheckout(type);
 }
 
+function handlePaymentPreview(type) {
+  if (!state.cart.length) {
+    document.querySelector("#catalog").scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  openCart();
+  showPaymentPlaceholder(type);
+}
+
 async function startStripeCheckout(type) {
   try {
     const response = await fetch("/.netlify/functions/create-checkout-session", {
@@ -684,6 +693,7 @@ document.querySelector("[data-menu-cart]").addEventListener("click", () => {
   openCart();
 });
 document.querySelectorAll("[data-payment]").forEach((button) => button.addEventListener("click", () => showPaymentPlaceholder(button.dataset.payment)));
+document.querySelectorAll("[data-payment-preview]").forEach((button) => button.addEventListener("click", () => handlePaymentPreview(button.dataset.paymentPreview)));
 
 checkoutButton.addEventListener("click", async () => {
   const text = buildOrderText();
@@ -703,7 +713,7 @@ wishForm.addEventListener("submit", async (event) => {
     await navigator.clipboard.writeText(request);
     wishResult.textContent = t("wishCopied");
   } catch {
-    submitAsEmail("Maison Liliya wish", request);
+    submitAsEmail("Made by Lorea wish", request);
   }
 });
 
@@ -715,7 +725,7 @@ customForm.addEventListener("submit", async (event) => {
     await navigator.clipboard.writeText(request);
     formResult.textContent = t("customCopied");
   } catch {
-    submitAsEmail("Maison Liliya custom order", request);
+    submitAsEmail("Made by Lorea custom order", request);
   }
 });
 
